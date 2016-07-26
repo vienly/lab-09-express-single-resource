@@ -1,0 +1,20 @@
+{
+  "name": "lab-09-express-single-resource",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) lab 11 single resource express api ======",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vienly/lab-09-express-single-resource.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vienly/lab-09-express-single-resource/issues"
+  },
+  "homepage": "https://github.com/vienly/lab-09-express-single-resource#readme"
+}
