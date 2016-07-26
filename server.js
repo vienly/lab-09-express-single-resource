@@ -6,7 +6,7 @@ const debug = require('debug')('movie:server');
 const movieRouter = require('./route/movie-route');
 const AppError = require('./lib/AppError');
 
-const port = process.env.PORT || 3000;
+const port = process.argv[2] || process.env.PORT || 3000;
 const server = express();
 
 server.use(bodyParser.json());
