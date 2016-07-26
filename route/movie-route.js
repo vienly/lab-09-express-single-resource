@@ -28,7 +28,7 @@ movieRouter.get('/', (req, res) => {
 });
 
 movieRouter.post('/', (req, res) => {
-  if(req.body && req.body.name && req.body.rating) {
+  if(Object.keys(req.body).length && req.body.name && req.body.rating) {
     let movie = new Movie(req.body.name, req.body.rating);
     movieCollection[movie.id] = movie;
     if (movie)
@@ -41,7 +41,7 @@ movieRouter.post('/', (req, res) => {
 movieRouter.put('/:id', (req, res) => {
   let movie = movieCollection[req.params.id];
   if (movie) {
-    if (req.body) {
+    if (Object.keys(req.body).length) { //check if there was a body
       movie.name = req.body.name || movie.name;
       movie.rating = req.body.rating || movie.rating;
       return res.json(movie);

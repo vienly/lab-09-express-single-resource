@@ -7,7 +7,7 @@ const movieRouter = require('./route/movie-route');
 const AppError = require('./lib/AppError');
 
 const port = process.env.PORT || 3000;
-const server = module.exports = express();
+const server = express();
 
 server.use(bodyParser.json());
 server.use('/api/movie', movieRouter);
@@ -17,6 +17,6 @@ server.all('*', (req, res) => {
   return AppError.error404('path not supported').respond(res);
 });
 
-server.listen(port, () => {
+module.exports = server.listen(port, () => {
   console.log('server up on port ' + port);
 });
