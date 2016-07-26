@@ -1,5 +1,4 @@
-# Lab 11 single resource express api
-
+# Lab 11 single resource express api ![idle](./assets/siegward.gif)
 
 ## To run server
 Clone down then run in terminal:
