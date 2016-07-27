@@ -3,7 +3,6 @@
 const Router = require('express').Router;
 const Movie = require('../model/Movie');
 const AppError = require('../lib/AppError');
-
 const movieRouter = module.exports = Router();
 
 const movieCollection = {};
