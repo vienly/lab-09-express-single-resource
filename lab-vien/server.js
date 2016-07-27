@@ -1,15 +1,19 @@
 'use strict';
 
 const express = require('express');
-const bodyParser = require('body-parser');
 const debug = require('debug')('movie:server');
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+const errorResponse = require('./lib/error-response');
 const movieRouter = require('./route/movie-route');
 const AppError = require('./lib/AppError');
 
 const port = process.argv[2] || process.env.PORT || 3000;
 const server = express();
 
+server.use(morgan('dev'));
 server.use(bodyParser.json());
+server.use(errorResponse());
 server.use('/api/movie', movieRouter);
 
 server.all('*', (req, res) => {
